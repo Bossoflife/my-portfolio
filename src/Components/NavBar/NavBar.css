@@ -1,0 +1,162 @@
+.logo{
+    font-size: 25px;
+    color: rgb(152, 142, 247);
+    transition: 0.5s;
+    cursor: pointer;
+    margin: 15px;
+    margin-top: 30px;
+    
+}
+/* Add this CSS to your stylesheet */
+.dot {
+  display: inline-block;
+  width: 20px; /* Adjust the size as needed */
+  height: 20px; /* Adjust the size as needed */
+  border-radius: 50%; /* Makes it a circle */
+  background-color: #B923E1; /* Color of the dot */
+  margin-left: 10px;
+  
+}
+
+.logo:hover {
+    transform:  scale(1.05);
+    font-size: 31px
+}
+.dot{
+    color: #B923E1;
+    size: 30px;
+}
+.navbar{
+   display: flex;
+   align-items: center;
+   justify-content:  space-between;
+   position: fixed;top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 1000; 
+   height: 77px;
+}
+.light-mode .anchor-like  {
+  color: #000 !important;
+}
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  font-size: 20px;
+  list-style: none; /* Remove list-style from here */
+ 
+}
+
+.links li{
+  color: #fff;
+  display: inline; /* Add display: inline; */
+}
+.nav-connect{
+padding: 5px 3px;
+border-radius: 50px;
+background: linear-gradient(267deg, #DA7C25 0.36%, #B923E1);
+font-size: 18px;
+cursor: pointer;
+transition: 0.5s;
+margin-right: 15px;
+margin-top: 20px;
+}
+.nav-connect:hover {
+   transform:  scale(1.05);
+}
+.label {
+    width: 80px;
+    height: 40px;
+    background-color: lightgray;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.input{
+    visibility: hidden;
+}
+.circle{
+    width: 32px;
+    background-color: white;
+    height: 32px;
+    top: 23px;
+    border-radius: 50%;
+    position: absolute;
+    animation: toggleOff 0.4s
+    linear forwards;
+}
+.input:checked + .label {
+    background-color: rgb(39, 30, 30);
+} 
+.input:checked + .label .circle{
+    animation: toggleOn .4s
+    linear forwards;
+}
+@keyframes toggleOn {
+  0%{
+    transform: translateX(0);
+  }
+  100%{
+    transform: translateX(40px);
+  }
+}
+@keyframes toggleOff {
+    0%{
+      transform: translateX(40px);
+    }
+    100%{
+      transform: translateX(0);
+    }
+  }
+  
+  .anchor-like{
+    text-decoration: none;
+    color: #fff;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .mob-menu-open{
+    display: none !important;
+  }
+  .mob-menu-close{
+    display: none !important;
+  }
+/* Media query for tablets */
+@media(max-width:768px){
+   .nav-connect{
+    display: none;
+   }
+   .mob-menu-open{
+    display: block !important;
+    position: fixed;
+    right: 100px
+   }
+   .mob-menu-close{
+    display: block !important;
+    position: relative;
+    top: 30px;
+    left:290px;
+    width: 30px
+   }
+   .nav-menu{
+    position: fixed;
+    flex-direction: column;
+    align-items: start;
+    top: 0;
+    gap: 30px;
+    background-color: #1f0016;
+    width: 350px;
+    height: 100%;
+    z-index: 2;
+    transition: 0.5s;
+    right: -350px;
+   }
+  .input > .label{
+    right: 70px !important;
+   }
+   .nav-menu li{
+    font-size: 30px;
+    padding-left: 100px;
+    flex-direction: row;
+    gap: 20px;
+   }
+}
